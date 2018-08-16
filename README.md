@@ -24,7 +24,7 @@ files, than you need put this into Module build.gradle file</font>
 
 ```groovy
 dependencies {
-	compile 'com.tonystark.android:defense_crash:2.0.0'
+    compile 'com.tonystark.android:defense_crash:2.0.0'
 }
 ```
 
@@ -39,29 +39,29 @@ public class MyApp extends Application implements IExceptionHandler {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-		// step1: Initialize the lib.
+	// step1: Initialize the lib.
         DefenseCrash.initialize();
-		// setp2: Install the fire wall defense.
+	// setp2: Install the fire wall defense.
         DefenseCrash.install(this);
     }
 
     @Override
     public void onCaughtException(Thread thread, Throwable throwable, boolean isSafeMode) {
-		// step3: Print the error when crashed during runtime.
+	// step3: Print the error when crashed during runtime.
         throwable.printStackTrace();
-		// step4: Upload this throwable to your crash collection sdk.
+	// step4: Upload this throwable to your crash collection sdk.
     }
 
     @Override
     public void onEnterSafeMode() {
-		// We enter the safe mode to keep the main looper loop after crashed.You’d better do nothing here,we just notify you.
+	// We enter the safe mode to keep the main looper loop after crashed.You’d better do nothing here,we just notify you.
     }
 
     @Override
     public void onMayBeBlackScreen(Throwable throwable) {
-		// onLayout(),onMeasure() or onDraw() has breaks down, 
-		// it causes the drawing to be abnormal and the choreographer to break down.
-		// We will notify you on this method,you’d better finish this activity or restart the application.
+	// onLayout(),onMeasure() or onDraw() has breaks down,
+	// it causes the drawing to be abnormal and the choreographer to break down.
+	// We will notify you on this method,you’d better finish this activity or restart the application.
     }
 }
 ```
