@@ -15,13 +15,6 @@ public class MyApp extends Application implements IExceptionHandler {
     }
 
     @Override
-    public void onCreate() {
-        super.onCreate();
-
-        throw new NullPointerException("Application测试崩溃生命周期");
-    }
-
-    @Override
     public void onCaughtException(Thread thread, Throwable throwable, boolean isSafeMode) {
         throwable.printStackTrace();
     }
@@ -35,5 +28,4 @@ public class MyApp extends Application implements IExceptionHandler {
     public void onMayBeBlackScreen(Throwable throwable) {
 
     }
-
 }
