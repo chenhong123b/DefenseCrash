@@ -72,25 +72,25 @@ public class MyApp extends Application implements IExceptionHandler {
 public class MyApp extends DefenseCrashApplication {
     @Override
     public void onCaughtException(Thread thread, Throwable throwable, boolean isSafeMode) {
-		// step1: Print the error when crashed during runtime.
+	// step1: Print the error when crashed during runtime.
         throwable.printStackTrace();
-		// step2: Upload this throwable to your crash collection sdk.
+	// step2: Upload this throwable to your crash collection sdk.
     }
 
     @Override
     public void onEnterSafeMode() {
-		// We enter the safe mode to keep the main looper loop after crashed.You’d better do nothing here,we just notify you.
+	// We enter the safe mode to keep the main looper loop after crashed.You’d better do nothing here,we just notify you.
     }
 
     @Override
     public void onMayBeBlackScreen(Throwable throwable) {
-		// onLayout(),onMeasure() or onDraw() has breaks down, 
-		// it causes the drawing to be abnormal and the choreographer to break down.
-		// We will notify you on this method,you’d better finish this activity or restart the application.
+	// onLayout(),onMeasure() or onDraw() has breaks down,
+	// it causes the drawing to be abnormal and the choreographer to break down.
+	// We will notify you on this method,you’d better finish this activity or restart the application.
     }
 }
 ```
-#It is Done!
+# It is Done!
 
 ---
 
