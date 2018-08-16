@@ -14,7 +14,7 @@ The library is designed to catch Java crashes, which can be effectively reduced 
 ```groovy
 allprojects {
     repositories {
-    		maven { url 'https://dl.bintray.com/xuuhaoo/maven/'}
+    	maven { url 'https://dl.bintray.com/xuuhaoo/maven/'}
     }
 }
 ```
@@ -24,7 +24,7 @@ files, than you need put this into Module build.gradle file</font>
 
 ```groovy
 dependencies {
-		compile 'com.tonystark.android:defense_crash:2.0.0'
+	compile 'com.tonystark.android:defense_crash:2.0.0'
 }
 ```
 
