@@ -90,7 +90,7 @@ public class MyApp extends DefenseCrashApplication {
     }
 }
 ```
-# It is Done!
+<font size=5> It is Done! </font>
 
 ---
 
