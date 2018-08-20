@@ -21,35 +21,35 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "崩溃啦...n", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                throw new RuntimeException("测试崩溃click");
+                throw new RuntimeException("测试崩溃 Click");
             }
         });
         new Thread(new Runnable() {
             @Override
             public void run() {
-                throw new IllegalArgumentException("Thread崩溃");
+                throw new IllegalArgumentException("测试崩溃 Thread");
             }
         }).start();
-        throw new NullPointerException("OnCreate测试崩溃生命周期");
+        throw new NullPointerException("OnCreate 测试崩溃");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        throw new NullPointerException("onResume测试崩溃生命周期");
+        throw new NullPointerException("onResume 测试崩溃");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        throw new NullPointerException("onPause测试崩溃生命周期");
+        throw new NullPointerException("onPause 测试崩溃");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        throw new NullPointerException("onDestroy测试崩溃生命周期");
+        throw new NullPointerException("onDestroy 测试崩溃");
     }
 }

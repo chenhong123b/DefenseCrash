@@ -15,6 +15,12 @@ public class MyApp extends Application implements IExceptionHandler {
     }
 
     @Override
+    public void onCreate() {
+        super.onCreate();
+        throw new NullPointerException("测试崩溃 Application");
+    }
+
+    @Override
     public void onCaughtException(Thread thread, Throwable throwable, boolean isSafeMode) {
         throwable.printStackTrace();
     }
